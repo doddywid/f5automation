@@ -1,0 +1,41 @@
+{
+    "class": "AS3",
+    "action": "patch",
+    "patchBody": [
+        {
+            "op": "add",
+            "path": "/Tenant-3.1/Application-3.1/VirtualServer-3.2",
+            "value": {
+                "class": "Service_HTTPS",
+                "virtualPort": 444,
+                "redirect80": false,
+                "virtualAddresses": [
+                    "10.1.20.11"
+                ],
+                "iRules": [
+                    "/Tenant-3.1/Application-3.1/Maintenance_iRule"
+                ],
+                "pool": "app2_http_pool",
+                "serverTLS": "app1_client_TLS_profile",
+                "clientTLS": "app1_server_TLS_profile"
+            }
+        },
+                {
+            "op": "add",
+            "path": "/Tenant-3.1/Application-3.1/app2_http_pool",
+            "value": {
+                "class": "Pool",
+                "monitors": [
+                    "http"
+                ],
+                "members": [{
+                    "servicePort": 9090,
+                    "shareNodes": true,
+                    "serverAddresses": [
+                        "10.1.10.5"
+                    ]
+                }]
+            }
+        }
+    ]
+}
