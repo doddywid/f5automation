@@ -1,0 +1,12 @@
+Target API endpoint: https://{{big_ip_a_mgmt}}/mgmt/tm/ltm/pool/~Common~Shared~app1_http_pool/members/~Common~10.1.10.5:8080
+
+
+#Disable pool member
+{
+    "session": "user-disabled" 
+}
+
+#Enable pool member
+{
+    "session": "user-enabled" 
+}
