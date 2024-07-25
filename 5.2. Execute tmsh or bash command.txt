@@ -1,0 +1,13 @@
+Target endpoint: https://{{big_ip_a_mgmt}}/mgmt/tm/util/bash
+
+#Execute tmsh command example
+{
+    "command": "run", 
+    "utilCmdArgs": "-c 'tmsh show sys license detail'"
+}
+
+#Execute bash command example
+{
+    "command": "run", 
+    "utilCmdArgs": "-c 'df -h'"
+}
