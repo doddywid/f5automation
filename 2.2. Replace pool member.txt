@@ -1,0 +1,7 @@
+[
+    {
+        "op": "replace", 
+        "path": "/Tenant-2/Application-2/web_pool/members/0/serverAddresses/1", 
+        "value": "10.1.2.5" 
+    }
+]
